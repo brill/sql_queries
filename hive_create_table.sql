@@ -1,0 +1,5 @@
+/* Creating a table with partition */
+
+CREATE TABLE IF NOT EXISTS ${hiveconf:TABLE_NAME} (ppid STRING) PARTITIONED BY
+(segment STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n' STORED AS TEXTFILE LOCATION '${hiveconf:location}';
